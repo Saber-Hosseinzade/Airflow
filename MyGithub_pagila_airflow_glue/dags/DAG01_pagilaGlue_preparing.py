@@ -12,7 +12,7 @@ DagID = pathlib.Path(__file__).stem
 S3_BUCKET = Variable.get("data_lake_bucket")
 
 DEFAULT_ARGS = {
-    "owner": "saber_Hosseinzade",
+    "owner": "Saber_Hosseinzade",
     "depends_on_past": False,
     "retries": 0,
     "email_on_failure": False,
