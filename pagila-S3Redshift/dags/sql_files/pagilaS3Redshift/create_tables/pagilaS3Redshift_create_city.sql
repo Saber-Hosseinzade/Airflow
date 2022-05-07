@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS myschema.city
+(
+	city_id INTEGER DISTKEY SORTKEY,
+    city VARCHAR(50) NOT NULL,
+	country_id SMALLINT NOT NULL,
+    last_update TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT now(),
+	PRIMARY KEY (city_id)	
+);
