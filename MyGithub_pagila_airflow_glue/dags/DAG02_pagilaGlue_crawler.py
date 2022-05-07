@@ -4,7 +4,7 @@ from datetime import timedelta
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.dummy import DummyOperator
-from airflow.providers.amazon.aws.operators.glue_crawler import AwsGlueCrawlerOperator
+from airflow.providers.amazon.aws.operators.glue_crawler import GlueCrawlerOperator
 from airflow.utils.dates import days_ago
 
 DagID = pathlib.Path(__file__).stem
@@ -39,8 +39,7 @@ with DAG(
                         --query 'TableList[].Name' --output table""",
     )
 
-
-    Crawler_run = AwsGlueCrawlerOperator(
+    Crawler_run = GlueCrawlerOperator(
         task_id=f"run_crawler", config={"Name": Crawler}
     )
 
