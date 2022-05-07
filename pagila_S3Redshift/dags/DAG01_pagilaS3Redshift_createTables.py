@@ -31,7 +31,7 @@ with DAG(
     dagrun_timeout = timedelta(minutes=5),
     start_date=days_ago(7),
     schedule_interval = None,
-    tags=["s3-redshift"],
+    tags=["s3_redshift"],
 ) as dag:
     
     Start = DummyOperator(task_id="Start")
